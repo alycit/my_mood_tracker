@@ -29,7 +29,7 @@
           <ul class="nav navbar-nav">
             <li class="<%= 'active' if params[:controller] == 'mood' %>"><a href="/moods/new">Log Mood</a></li>
           </ul>
-          <% if session[:userinfo] %>
+          <% if logged_in? %>
             <ul class="nav navbar-nav navbar-right">
               <li><a id="qsLogoutBtn" href="/logout">Logout</a></li>
             </ul>

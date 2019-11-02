@@ -2,10 +2,10 @@ module Secured
   extend ActiveSupport::Concern
 
   included do
-    before_action :logged_in_using_omniauth?
+    before_action :redirect_unless_logged_in_with_omniauth!
   end
 
-  def logged_in_using_omniauth?
-    redirect_to '/' unless session[:userinfo].present?
+  def redirect_unless_logged_in_with_omniauth!
+    redirect_to root_path unless session[:userinfo].present?
   end
 end

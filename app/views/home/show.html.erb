@@ -1,5 +1,8 @@
-<% if session[:userinfo] %>
-  <p>Logged in!</p>
+<% if logged_in? %>
+  <section class="jumbotron  text-center">
+    <h2><img class="jumbo-thumbnail" src="<%= current_user["info"]["image"] %>"/></h2>
+    <h1>Welcome, <%= current_user["info"]["name"] %></h1>
+  </section>
 <% else %>
   <p>Please login first</p>
 <% end %>
