@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>My Mood Tracker</title>
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_pack_tag 'cover', media: 'all' %>
+    <%= javascript_pack_tag 'cover' %>
+
+    <style>
+      body {
+        background: url('<%= choose_background %>') no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      }
+
+      html,
+      body {
+        height: 100%;
+        background-color: rgb(41, 113, 145);
+      }
+    </style>
+</head>
+<body class="text-center" data-gr-c-s-loaded="true">
+  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="masthead mb-auto">
+      <div class="inner">
+        <h3 class="masthead-brand">My Mood Tracker</h3>
+        <nav class="nav nav-masthead justify-content-center">
+          <%= link_to "Login", '/auth/auth0', method: :post, class: "nav-link" %>
+        </nav>
+      </div>
+    </header>
+
+    <%= yield %>
+
+    <footer class="mastfoot mt-auto">
+      <div class="inner">
+        <p>Developed by <a href="https://twitter.com/alycit">@alycit</a></p>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

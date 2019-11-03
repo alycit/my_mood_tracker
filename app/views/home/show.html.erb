@@ -4,5 +4,11 @@
     <h1>Welcome, <%= current_user["info"]["name"] %></h1>
   </section>
 <% else %>
-  <p>Please login first</p>
+  <main role="main" class="inner cover">
+    <h1 class="cover-heading">Track your mood</h1>
+    <p class="lead">My Mood Tracker is a tool for logging your mood daily and visualizing it over time.</p>
+    <p class="lead">
+      <%= link_to "Learn More", '/info', class: "btn btn-lg btn-secondary" %>
+    </p>
+  </main>
 <% end %>

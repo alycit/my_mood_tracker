@@ -3,8 +3,7 @@ Rails.application.routes.draw do
   get 'auth/auth0/callback' => 'auth0#callback'
   get 'auth/failure' => 'auth0#failure'
   get '/logout' => 'logout#logout'
-  
-  get 'dashboard' => 'dashboard#show'
+  get '/info' => 'home#info'
 
   root 'home#show'
 end
